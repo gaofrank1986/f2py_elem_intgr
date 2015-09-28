@@ -1,4 +1,4 @@
-module hi_shape_function
+module hi_mod_funcs
 
 contains
 
@@ -233,4 +233,4 @@ SUBROUTINE DSHAPE(NDIM,NODE,C,CK,X,COSN,FJCB,GD)
 
     END SUBROUTINE DSHAPE
 
-end module hi_shape_function
+end module hi_mod_funcs

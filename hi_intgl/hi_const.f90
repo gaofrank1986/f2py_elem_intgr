@@ -1,6 +1,5 @@
 module hi_const
-    
-	integer,parameter   :: ngr = -10
+    integer,parameter   :: ngr = -10
     integer             :: ngl = -10 ! how many gaussian point on 
 
     real(8),parameter   :: dlt(3,3) = RESHAPE((/1.,0.,0.,0.,1.,0.,0.,0.,1./),(/3,3/))

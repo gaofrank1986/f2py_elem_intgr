@@ -1,6 +1,8 @@
 module hi_target_func
 
   use hi_const
+  
+  !include 'hi_const.f90'
 
 contains
       SUBROUTINE F_BAR(NDIM,NBDM,DRDX,COSN,R,DRDN,XI,SHAP,XP,XQ,NF,FB)
