@@ -1,4 +1,4 @@
-module hi_const
+!module hi_const
     integer,parameter   :: ngr = -10
     integer             :: ngl = -10 ! how many gaussian point on 
 
@@ -25,4 +25,4 @@ module hi_const
     ! edge 4 , xip(1) != -1
     ! why?
 
-end module hi_const
+!end module hi_const

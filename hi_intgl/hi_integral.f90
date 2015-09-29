@@ -1,13 +1,12 @@
-module hi_SIEPPEM
+module hi_intg 
 
-    use hi_const
+    !use hi_const
     use hi_mod_funcs
-    use hi_target_func
+    !use hi_target_func
     
     implicit none 
     
-    !include 'hi_const.f90'    
-    !include 'hi_funcs.f90'    
+    include 'hi_const.f90'    
     integer,protected    ::  num_dim,num_node,num_nrml,num_elem
     integer,protected    ::  elem_nd_count,num_target_func
     real(8),protected    ::  hi_beta 
@@ -37,12 +36,11 @@ contains
     include 'test3.f90'
     include 'test2.f90'
     include 'test.f90'
-        
+    include 'hi_integrand.f90'        
+    
     subroutine read_model_from_WAVDUT()
-
-        
-        !use MVAR_MOD
         use mesh
+        
         implicit none
 
         integer :: i,j,ie,id,tmp,tmp1
@@ -97,18 +95,7 @@ contains
         print *,"Transfering elem matrix from old order to new order"
             do i = 1,num_elem
                 if (elem_nd_count .eq. 8) then
-!                     tmp = elem_matrix(2,i)
-!                     elem_matrix(2,i) = elem_matrix(5,i)
-!                     tmp1 = elem_matrix(3,i)
-!                     elem_matrix(3,i) = tmp
-!                     tmp = elem_matrix(4,i)
-!                     elem_matrix(4,i) = elem_matrix(6,i)
-!                     elem_matrix(5,i) = tmp1
-!                     elem_matrix(6,i) = elem_matrix(7,i)
-!                     elem_matrix(7,i) = tmp
-
-
-
+                    print *,"god knows why@-@"
                 endif
                 if (NCN(i) .eq. 8) then
                 tmp = elem_matrix(2,i)
@@ -136,13 +123,6 @@ contains
         value_list = 0
 
         print *,"------------Stop Reading Model from WAVDUT-------------"
-        !print *, node_matrix
-!         print *,"------------elem matrix-------------"
-
-        !print *, elem_matrix
-
-
-
     end subroutine read_model_from_WAVDUT
 
     subroutine swap_result(result)
@@ -274,14 +254,6 @@ contains
         print *,"src preseted as",src_glb_preset
         print *,"src_ctr_glb preseted as",src_ctr_glb
 
-
-    end subroutine
-
-    subroutine debug_test()
-        
-        implicit none
-
-        print *,"elem matrix",elem_matrix
 
     end subroutine
     

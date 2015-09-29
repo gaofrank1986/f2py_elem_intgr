@@ -55,8 +55,8 @@
                 DRDX=RI/R
             ELSE
                 A = 0.D0
-    !             DO 10 I=1,NDIM; A(I)=0.D0
-    !             DO 10 J=1,NBDM        
+     !             DO 10 I=1,NDIM; A(I)=0.D0
+     !             DO 10 J=1,NBDM        
                 forall (i = 1:ndim)    
                     A(i)=A(i)+dot_product(GCD(i,1:nbdm),SLOP(1:nbdm))
                 end forall                  
@@ -69,9 +69,8 @@
             
             DRDN = DOT_PRODUCT(COSN,DRDX)  !!!!  notice dr/dn is defined  here
             
-            CALL F_BAR(NDIM,NBDM,DRDX,COSN,R,DRDN,XI,SF_iter,XP,X,NF,FQ)
-            !!SUBROUTINE F_BAR(NDIM,NBDM,DRDX,COSN,R,DRDN,XI,SHAP,XP,XQ,NF,FB)
-
+            !CALL F_BAR(NDIM,NBDM,DRDX,COSN,R,DRDN,XI,SF_iter,XP,X,NF,FQ)
+            call f_integrand(ndim,nf,cosn,drdx,drdn,sf_iter,fq)
             COEFB(IP,:) = FQ*FJCB/ROBAR**hi_beta
 
      
