@@ -93,7 +93,7 @@
 
         end forall
         !COEFB(1:NPOWF,:)=MATMUL(RMAT,COEFB(1:NPOWF,:))    ! Bk IN Eq.(3-6-62)
-        ! coefb has size 12xnum_target_func,but only from index 1 to 7 has useful info
+        ! coefb has size 12xnum_intgd,but only from index 1 to 7 has useful info
       
         
 

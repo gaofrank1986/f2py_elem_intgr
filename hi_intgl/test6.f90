@@ -44,18 +44,18 @@
         &        -COEFC(1)**4
    
     end subroutine
-    SUBROUTINE compute_coeff_G(NDIM,NBDM,NODE,NPOWG,XP,XIP,XIQ,         &
-     &                  COEFG)
+    subroutine compute_coeff_g(ndim,nbdm,node,npowg,xp,xip,xiq,         &
+     &                  coefg)
       ! THIS ROUTINE DETERMINES COEFFICIENTS Gm USING Eqs.(3-6-58)~(3-6-60)
         implicit none 
 
-        integer,intent(in) ::  NDIM,nBDM,NODE,NPOWG
-
+        integer,intent(in) ::  ndim,nbdm,node,npowg
+        real(8),intent(in) :: xp(ndim),xip(nbdm),xiq(nbdm)
         real(8) :: drdn,xbar2,xxbar,vk,rhoq,rho,r2,fjcb
 
-        real(8) ::XP(NDIM),XIP(NBDM),XIQ(NBDM),COSN(NDIM),        &
-            &          GCD(NDIM,NBDM),XI(NDIM),SLOP(NBDM),RI(NDIM),     &
-            &          SHAP(NODE),RMAT(NPOWG,NPOWG),COEFG(0:NPOWG)
+        real(8) ::     cosn(ndim),        &
+            &          gcd(ndim,nbdm),xi(ndim),slop(nbdm),ri(ndim),     &
+            &          shap(node),rmat(npowg,npowg),coefg(0:npowg)
 
         integer :: ip,jp
 
@@ -72,26 +72,28 @@
 !        COEFG(1)=(-0.5*XXBAR+XBAR2*XIP(1))*XIQ(1)
 !        COEFG(2)=0.25*XBAR2
         ELSE      ! QUADRILATERAL ELEMENTS
-            SLOP=XIQ-XIP
-            RHOQ=DSQRT(DOT_PRODUCT(SLOP,SLOP))
-            SLOP=SLOP/RHOQ
-            VK=RHOQ/DBLE(NPOWG)
-            DO 20 IP=0,NPOWG
-            RHO=VK*DBLE(IP)
-            XI(1:NBDM)=XIP+RHO*SLOP
-            CALL SHAPEF(NDIM,NODE,cnr_lcl_mtx,cnr_glb_mtx,XI,XP,RI,SHAP)
-            IF(IP.NE.0) GOTO 10
-            CALL DSHAPE(NDIM,NODE,cnr_lcl_mtx,cnr_glb_mtx,XI,COSN,FJCB,GCD)   !dX/dXI
-            RI=MATMUL(GCD,SLOP); COEFG(0)=DOT_PRODUCT(RI,RI)  ! Eq.(3-6-58)
-            GOTO 20
-!  10    COEFG(IP)=((DSQRT(R2)/RHO)**2-COEFG(0))/RHO     ! Eq.(3-6-60)
- 10    COEFG(IP)=((new_norm3(RI)/RHO)**2-COEFG(0))/RHO     ! Eq.(3-6-60)
+            slop=xiq-xip
+            !rhoq=dsqrt(dot_product(slop,slop))
+            rhoq = norm2(slop)
+            slop=slop/rhoq
+            vk=rhoq/dble(npowg)
+            do 20 ip=0,npowg
+            rho=vk*dble(ip)
+            xi(1:nbdm)=xip+rho*slop
+            call shapef(ndim,node,cnr_lcl_mtx,cnr_glb_mtx,xi,xp,ri,shap)
+            if(ip.ne.0) goto 10
+            call dshape(ndim,node,cnr_lcl_mtx,cnr_glb_mtx,xi,cosn,fjcb,gcd)   !dx/dxi
+            ri=matmul(gcd,slop); coefg(0)=dot_product(ri,ri)  ! eq.(3-6-58)
+            goto 20
+!  10    coefg(ip)=((dsqrt(r2)/rho)**2-coefg(0))/rho     ! eq.(3-6-60)
 
-       RMAT(IP,1)=1.D0        ! Eq.(3-6-42)
-       DO JP=2,NPOWG; RMAT(IP,JP)=RMAT(IP,JP-1)*RHO; ENDDO
- 20    CONTINUE
+ 10    coefg(ip)=((new_norm3(ri)/rho)**2-coefg(0))/rho     ! eq.(3-6-60)
+
+       rmat(ip,1)=1.d0        ! eq.(3-6-42)
+       do jp=2,npowg; rmat(ip,jp)=rmat(ip,jp-1)*rho; enddo
+ 20    continue
        
-       CALL INVSOLVR(NPOWG,NPOWG,RMAT,NPOWG,-1)       ! INVERSE MATRIX [R] IN Eq.(3-6-59)
-       COEFG(1:NPOWG)=MATMUL(RMAT,COEFG(1:NPOWG))     ! SOLVING Eq.(3-6-59) FOR {G}
-        ENDIF
+       call invsolvr(npowg,npowg,rmat,npowg,-1)       ! inverse matrix [r] in eq.(3-6-59)
+       coefg(1:npowg)=matmul(rmat,coefg(1:npowg))     ! solving eq.(3-6-59) for {g}
+        endif
     end subroutine compute_coeff_g

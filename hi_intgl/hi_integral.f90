@@ -6,7 +6,7 @@ module hi_intg
     
     include 'hi_const.f90'    
     integer,protected    ::  num_dim,num_node,num_nrml,num_elem
-    integer,protected    ::  elem_nd_count,num_target_func
+    integer,protected    ::  elem_nd_count,num_intgd
     real(8),protected    ::  hi_beta 
 
 
@@ -19,7 +19,7 @@ module hi_intg
 
     
     integer,private :: model_readed_flag = 0 ! 0 for not readed
-    integer,private :: external_src_ctr_flag = 0! if or not use external src ctr input
+    !integer,private :: external_src_ctr_flag = 0! if or not use external src ctr input
 
     integer,private,parameter :: NPW = 4
     real(8),private,allocatable :: value_list(:,:)
@@ -45,6 +45,79 @@ contains
         
         ex_node_matrix = node_matrix
     end subroutine 
+    
+
+    subroutine read_model_from_DAT()
+
+        implicit none
+
+        integer :: ip,ie,tmp,i,id        
+
+        if (model_readed_flag == 0) then
+            print *,"------------Start Reading Model-------------"
+            OPEN(5,FILE='SIEPPEM.DAT',STATUS='OLD')
+
+            read (5,*) num_dim,num_node,num_elem,elem_nd_count,hi_beta,num_intgd
+            ! number of node per element
+            ! beta is the power of r in target equation
+            ! number of target func components
+            num_intgd = 8                             !<<<===============================
+            allocate(node_matrix(num_dim,num_node))
+            allocate(elem_matrix(elem_nd_count,num_elem))
+            allocate(src_flag(num_elem))
+            allocate(src_local_list(2,num_elem))
+            allocate(value_list(num_elem,num_intgd))
+
+            if (num_dim == 2) ngl = 1
+    
+         !    Input nodal coordinates and element connectivity
+          
+            do ip = 1,num_node
+                read(5,*) tmp,(node_matrix(i,tmp),i=1,num_dim)                 ! card set 2
+            end do  
+
+            do ie = 1,num_elem
+                read(5,*) tmp,(elem_matrix(id,tmp),id=1,elem_nd_count),src_flag(tmp)    ! card set 3
+            end do
+            !====src_flag
+            ! if = 0 src not on elem
+            ! if > 0 src is given in global coordinate, use node with id (src_flag)
+            ! if < 0 src is given in local coordinate, use local src list given in card set 4
+
+            read(5,*) (src_glb(i),i=1,num_dim)                       ! card set 4  
+             ! read src x,y,z coord
+             ! there seems a error, src_glb should be an array of global coordinate
+             ! since src_glb cannot remain unchanged for different element
+        
+            do ie=1,num_elem
+                if (src_flag(ie) < 0) then
+                    read(5,*) (src_local_list(i,ie),i=1,num_dim-1)
+                end if
+                ! src local position given in elements input order
+            end do
+
+            close(5)
+
+            print *,"------------Finish Reading Model-------------"
+            !------------Some initialisation of data
+
+            allocate(full_mesh_matrix(num_dim,elem_nd_count,num_elem))
+            
+            forall (ie = 1:num_elem,id = 1:elem_nd_count)
+
+                    full_mesh_matrix(1:num_dim,id,ie)=node_matrix(1:num_dim,elem_matrix(id,ie))
+                    ! reorganize nodes coordinate by element node order
+            end forall
+
+            model_readed_flag = 1 
+            value_list = 0
+
+        else
+            print *,"--Attention! Reading process skipped,model already loaded---"
+        end if
+
+    end subroutine read_model_from_DAT
+
     subroutine read_model_from_WAVDUT()
         use mesh
         
@@ -60,13 +133,13 @@ contains
         num_nrml = NNODED
         elem_nd_count = 8 !NCN(IELEM)!! to be changed
         hi_beta = 3.
-        num_target_func = 8
+        num_intgd = 8
 
         allocate(node_matrix(num_dim,num_node))
         allocate(normal_matrix(num_dim,num_nrml))
 
         allocate(elem_matrix(elem_nd_count,num_elem))
-        allocate(value_list(num_elem,num_target_func))
+        allocate(value_list(num_elem,num_intgd))
         allocate(cnr_glb_mtx(num_dim,elem_nd_count))
 
         if (num_dim == 2) ngl = 1
@@ -85,19 +158,6 @@ contains
 !              elem_mtx_nrml(i,j) = NCOND(i,j)
         end forall
 
-        ! for first and third edge, vertical component unchanged,1st comp change
-                ! for second and forth edge, horizontal component unchanged,2rd comp change
-                !       4----7----3
-                !       |         |
-                !       8    9    6
-                !       |         |  new position
-                !       1----5----2
-
-                !         7     6     5
-
-                !         8           4 old position
-
-                !         1     2     3
         !switch order
         print *,"Transfering elem matrix from old order to new order"
             do i = 1,num_elem
@@ -126,7 +186,7 @@ contains
         end forall
 
         !------------- Initialization-------------------------
-        model_readed_flag = 0
+        model_readed_flag = 1
         value_list = 0
 
         print *,"------------Stop Reading Model from WAVDUT-------------"
@@ -159,82 +219,6 @@ contains
         result(7) = tmp
     end subroutine
 
-
-    subroutine read_model_from_DAT()
-
-        implicit none
-        integer :: ip,ie,tmp,i,id        
-
-        if (model_readed_flag == 0) then
-            print *,"------------Start Reading Model-------------"
-            OPEN(5,FILE='SIEPPEM.DAT',STATUS='OLD')
-
-            read (5,*) num_dim,num_node,num_elem,elem_nd_count,hi_beta,num_target_func
-            ! dimesnion
-            ! number of node
-            ! number of element
-            ! number of node per element
-            ! beta is the power of r in target equation
-            ! number of target func components
-            num_target_func = 8
-            allocate(node_matrix(num_dim,num_node))
-            allocate(elem_matrix(elem_nd_count,num_elem))
-            allocate(src_flag(num_elem))
-            allocate(src_local_list(2,num_elem))
-            allocate(value_list(num_elem,num_target_func))
-
-            if (num_dim == 2) ngl = 1
-    
-         !    Input nodal coordinates and element connectivity
-          
-            DO IP = 1,num_node
-                READ(5,*) tmp,(node_matrix(I,tmp),I=1,num_dim)                 ! Card set 2
-            end do  
-
-
-            DO IE = 1,num_elem
-                READ(5,*) tmp,(elem_matrix(ID,tmp),ID=1,elem_nd_count),src_flag(tmp)    ! Card set 3
-            end do
-            !==========================
-            !====src_flag
-            ! if = 0 src not on elem
-            ! if > 0 src is given in global coordinate, use node with id (src_flag)
-            ! if < 0 src is given in local coordinate, use local src list given in card set 4
-
-          
-            READ(5,*) (src_glb(i),i=1,num_dim)                       ! Card set 4  
-             ! read src x,y,z coord
-             ! there seems a error, src_glb should be an array of global coordinate
-             ! since src_glb cannot remain unchanged for different element
-        
-            DO IE=1,num_elem
-                if (src_flag(ie) < 0) then
-                    read(5,*) (src_local_list(i,ie),i=1,num_dim-1)
-                end if
-                ! src local position given in elements input order
-            end do
-
-            close(5)
-
-            print *,"------------Finish Reading Model-------------"
-            !------------Some initialisation of data
-
-            allocate(full_mesh_matrix(num_dim,elem_nd_count,num_elem))
-            
-            forall (ie = 1:num_elem,id = 1:elem_nd_count)
-
-                    full_mesh_matrix(1:num_dim,id,ie)=node_matrix(1:num_dim,elem_matrix(id,ie))
-                    ! reorganize nodes coordinate by element node order
-            end forall
-
-            model_readed_flag = 0
-            value_list = 0
-
-        else
-            print *,"--Attention! Reading process skipped,model already loaded---"
-        end if
-
-    end subroutine read_model_from_DAT
 
     
 end module
