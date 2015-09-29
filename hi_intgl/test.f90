@@ -5,11 +5,11 @@ subroutine eval_singular_elem(this_elem_id,num_edge,nf,ndim,hiresult,src_preset_
     !  Add src_preset function----------August 1st
     implicit none
 
-    integer,intent(in) :: num_edge,this_elem_id,src_preset_flag
+    integer,intent(in) :: num_edge,this_elem_id,src_preset_flag,ndim,nf
     real(8),intent(out) :: hiresult(nf)
     ! nf : num of kernel funcs
 
-    real(9) :: src_lcl(ndim-1),pt_intg(ndim-1),pt_intg_tmp(ndim - 1)  
+    real(8) :: src_lcl(ndim-1),pt_intg(ndim-1),pt_intg_tmp(ndim - 1)  
     ! src point, integration point , temporary integration point     
 
     real(8) :: end_nodes(2,2),ri(3),RINT(nf)
@@ -31,7 +31,7 @@ subroutine eval_singular_elem(this_elem_id,num_edge,nf,ndim,hiresult,src_preset_
 
     debug_file_id = 109
     debug_flag = 0
-    allocate(coef_g(0:,n_pwr_g),coef_h(0,npw),sf_src(elem_nd_count))
+    allocate(coef_g(0:n_pwr_g),coef_h(0:npw),sf_src(elem_nd_count))
     allocate(gpl(iabs(ngl)),gwl(iabs(ngl)))
     print *,"============in eval_SINGULAR_ELEM=============="
 
@@ -183,7 +183,7 @@ subroutine eval_singular_elem(this_elem_id,num_edge,nf,ndim,hiresult,src_preset_
                     !             why not inside integrate_Rho?????
 
 
-                    call integrate_rho(n_pwr_g,src_lcl,pt_intg,coef_g,coef_h,RINT)
+                    call integrate_rho(ndim,nf,npw,n_pwr_g,src_lcl,pt_intg,coef_g,coef_h,RINT)
 
                     hiresult = hiresult + (DABS(step_size)*GWL(IGL)*DRDNP/RHO_Q)*RINT
                     ! Equation (3-6-50)

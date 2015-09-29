@@ -7,13 +7,14 @@ running build_src
 build_src
 building extension "hi" sources
 f2py options: []
-f2py:> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7
+f2py:> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7
 Reading fortran codes...
 	Reading file 'hi_integral.f90' (format:free)
 	Reading file 'test4.f90' (format:free)
 	Reading file 'test3.f90' (format:free)
 	Reading file 'test2.f90' (format:free)
+	Reading file 'test.f90' (format:free)
 	Reading file 'hi_const.f90' (format:free)
 	Reading file 'hi_tfunc.f90' (format:free)
 	Reading file 'hi_funcs.f90' (format:free)
@@ -55,6 +56,13 @@ In: :hi:hi_integral.f90:hi_sieppem:integrate_rho
 get_useparameters: no module hi_const info used by integrate_rho
 In: :hi:hi_integral.f90:hi_sieppem:integrate_rho
 get_useparameters: no module hi_target_func info used by integrate_rho
+				Block: eval_singular_elem
+In: :hi:hi_integral.f90:hi_sieppem:eval_singular_elem
+get_useparameters: no module hi_mod_funcs info used by eval_singular_elem
+In: :hi:hi_integral.f90:hi_sieppem:eval_singular_elem
+get_useparameters: no module hi_const info used by eval_singular_elem
+In: :hi:hi_integral.f90:hi_sieppem:eval_singular_elem
+get_useparameters: no module hi_target_func info used by eval_singular_elem
 				Block: read_model_from_wavdut
 In: :hi:hi_integral.f90:hi_sieppem:read_model_from_wavdut
 get_useparameters: no module hi_mod_funcs info used by read_model_from_wavdut
@@ -237,6 +245,7 @@ Post-processing (stage 2)...
 				Block: compute_coeff_g
 				Block: compute_coeff_b
 				Block: integrate_rho
+				Block: eval_singular_elem
 				Block: read_model_from_wavdut
 				Block: swap_result
 				Block: read_model_from_dat
@@ -271,6 +280,8 @@ Building modules...
 			  coefb = compute_coeff_b(nf,node,npowf,xp,xip,xiq,slop,rhoq,coefg,[ndim,npowg])
 			Constructing wrapper function "hi_sieppem.integrate_rho"...
 			  hiresult = integrate_rho(nf,src_lcl,pt_intg,coef_g,coef_h,[ndim,npw,n_pwr_g])
+			Constructing wrapper function "hi_sieppem.eval_singular_elem"...
+			  hiresult = eval_singular_elem(this_elem_id,num_edge,nf,ndim,src_preset_flag)
 			Constructing wrapper function "hi_sieppem.read_model_from_wavdut"...
 			  read_model_from_wavdut()
 			Constructing wrapper function "hi_sieppem.swap_result"...
@@ -364,13 +375,13 @@ getarrdims:warning: assumed shape array, using 0 instead of ':'
 			  meshbd(ncor)
 			Constructing wrapper function "mesh.convsb"...
 			  convsb()
-	Wrote C/API module "hi" to file "/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c"
-	Fortran 90 wrappers are saved to "/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90"
-  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/fortranobject.c' to sources.
-  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7' to include_dirs.
-copying /usr/local/lib/python2.7/site-packages/numpy/f2py/src/fortranobject.c -> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7
-copying /usr/local/lib/python2.7/site-packages/numpy/f2py/src/fortranobject.h -> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7
-  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90' to sources.
+	Wrote C/API module "hi" to file "/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c"
+	Fortran 90 wrappers are saved to "/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90"
+  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/fortranobject.c' to sources.
+  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7' to include_dirs.
+copying /usr/local/lib/python2.7/site-packages/numpy/f2py/src/fortranobject.c -> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7
+copying /usr/local/lib/python2.7/site-packages/numpy/f2py/src/fortranobject.h -> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7
+  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90' to sources.
 build_src: building npy-pkg config files
 running build_ext
 customize UnixCCompiler
@@ -383,90 +394,17 @@ building 'hi' extension
 compiling C sources
 C compiler: clang -fno-strict-aliasing -fno-common -dynamic -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
 
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv
-creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7
-compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
-clang: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c
-In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:18:
-In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/fortranobject.h:13:
-In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
-In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:17:
-In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1804:
-/usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "          "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
-#warning "Using deprecated NumPy API, disable it by " \
- ^
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2945:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = nodele;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2948:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = xyz;
-                               ^ ~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2949:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = nodelj;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2951:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = ncondb;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2953:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = ncon;
-                               ^ ~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2954:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = ietype;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2957:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = nodnoe;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2959:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = nodqua;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2960:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = txyze;
-                               ^ ~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2961:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = dxyz;
-                               ^ ~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2962:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = dxyztp;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2963:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = dxyzb;
-                               ^ ~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2965:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = nnormn;
-                               ^ ~~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2966:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = xyzb;
-                               ^ ~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2967:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = dxyze;
-                               ^ ~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2971:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = xyztp;
-                               ^ ~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2973:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = ncn;
-                               ^ ~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2974:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = ncond;
-                               ^ ~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2976:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = xyze;
-                               ^ ~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:2977:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
-  f2py_mesh_def[i_f2py++].func = nconb;
-                               ^ ~~~~~
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.c:111:12: warning: unused function 'f2py_size' [-Wunused-function]
-static int f2py_size(PyArrayObject* var, ...)
-           ^
-22 warnings generated.
-clang: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/fortranobject.c
-In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/fortranobject.c:2:
-In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/fortranobject.h:13:
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7
+compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+clang: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/fortranobject.c
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/fortranobject.c:2:
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/fortranobject.h:13:
 In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
 In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:17:
 In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1804:
@@ -474,12 +412,85 @@ In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/
 #warning "Using deprecated NumPy API, disable it by " \
  ^
 1 warning generated.
+clang: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:18:
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/fortranobject.h:13:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:17:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1804:
+/usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "          "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3066:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = nodele;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3069:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = xyz;
+                               ^ ~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3070:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = nodelj;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3072:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = ncondb;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3074:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = ncon;
+                               ^ ~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3075:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = ietype;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3078:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = nodnoe;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3080:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = nodqua;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3081:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = txyze;
+                               ^ ~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3082:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = dxyz;
+                               ^ ~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3083:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = dxyztp;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3084:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = dxyzb;
+                               ^ ~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3086:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = nnormn;
+                               ^ ~~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3087:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = xyzb;
+                               ^ ~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3088:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = dxyze;
+                               ^ ~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3092:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = xyztp;
+                               ^ ~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3094:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = ncn;
+                               ^ ~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3095:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = ncond;
+                               ^ ~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3097:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = xyze;
+                               ^ ~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:3098:32: warning: incompatible pointer types assigning to 'f2py_init_func' (aka 'void (*)(int *, npy_intp *, f2py_set_data_func, int *)') from 'void (*)(int *, int *, void (*)(char *, int *), int *)' [-Wincompatible-pointer-types]
+  f2py_mesh_def[i_f2py++].func = nconb;
+                               ^ ~~~~~
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.c:111:12: warning: unused function 'f2py_size' [-Wunused-function]
+static int f2py_size(PyArrayObject* var, ...)
+           ^
+22 warnings generated.
 compiling Fortran 90 module sources
 Fortran f77 compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3 -funroll-loops
 Fortran f90 compiler: /usr/local/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
 Fortran fix compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
-compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
-extra options: '-J/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/ -I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/'
+compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+extra options: '-J/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/ -I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/'
 gfortran:f90: hi_integral.f90
 hi_integral.f90:25:44:
 
@@ -491,6 +502,16 @@ hi_integral.f90:48:37:
          integer :: i,j,ie,id,tmp,tmp1
                                      1
 Warning: Unused variable 'tmp1' declared at (1) [-Wunused-variable]
+test.f90:26:30:
+
+     real(8) :: vlc2,rho_q,comt
+                              1
+Warning: Unused variable 'comt' declared at (1) [-Wunused-variable]
+test.f90:22:20:
+
+     integer :: id,ie,tmp,i_edge,ks,src_identifier,igl,num_converge
+                    1
+Warning: Unused variable 'ie' declared at (1) [-Wunused-variable]
 test2.f90:14:27:
 
          integer :: k ,beta1,nbdm
@@ -614,132 +635,132 @@ compiling Fortran sources
 Fortran f77 compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3 -funroll-loops
 Fortran f90 compiler: /usr/local/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
 Fortran fix compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
-compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
-extra options: '-J/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/ -I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/'
-gfortran:f90: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:98:19:
+compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+extra options: '-J/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/ -I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/'
+gfortran:f90: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:99:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:128:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:129:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:158:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:159:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:188:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:189:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:218:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:219:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:248:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:249:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:278:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:279:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:308:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:309:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:338:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:339:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:368:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:369:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:398:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:399:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:428:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:429:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:458:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:459:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:488:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:489:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:518:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:519:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:548:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:549:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:578:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:579:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:608:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:609:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:638:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:639:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:668:19:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:669:19:
 
        integer r,i,j
                    1
 Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10:
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10:
 
        use mesh, only : nodele
           1
 Warning: Unused module variable 'dxyz' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'dxyzb' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'dxyze' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'dxyztp' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'ietype' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'ncn' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'ncon' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'nconb' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'ncond' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'ncondb' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'nnormn' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'nodele' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'nodelj' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'nodnoe' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'nodqua' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'txyze' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'xyz' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'xyzb' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'xyze' which has been explicitly imported at (1) [-Wunused-variable]
-/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:694:10: Warning: Unused module variable 'xyztp' which has been explicitly imported at (1) [-Wunused-variable]
-/usr/local/bin/gfortran -Wall -g -Wall -g -undefined dynamic_lookup -bundle /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/himodule.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/fortranobject.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/hi_integral.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/hi_const.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/hi_tfunc.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/hi_funcs.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/mesh.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.o -L/usr/local/Cellar/gcc/5.2.0/lib/gcc/5/gcc/x86_64-apple-darwin14.4.0/5.2.0 -L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/sqlite/lib -lgfortran -o ./hi.so
-Removing build directory /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpW3Dhwv
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'dxyzb' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'dxyze' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'dxyztp' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'ietype' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'ncn' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'ncon' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'nconb' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'ncond' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'ncondb' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'nnormn' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'nodele' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'nodelj' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'nodnoe' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'nodqua' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'txyze' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'xyz' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'xyzb' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'xyze' which has been explicitly imported at (1) [-Wunused-variable]
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.f90:695:10: Warning: Unused module variable 'xyztp' which has been explicitly imported at (1) [-Wunused-variable]
+/usr/local/bin/gfortran -Wall -g -Wall -g -undefined dynamic_lookup -bundle /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/himodule.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/fortranobject.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/hi_integral.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/hi_const.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/hi_tfunc.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/hi_funcs.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/mesh.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT/src.macosx-10.10-x86_64-2.7/hi-f2pywrappers2.o -L/usr/local/Cellar/gcc/5.2.0/lib/gcc/5/gcc/x86_64-apple-darwin14.4.0/5.2.0 -L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/sqlite/lib -lgfortran -o ./hi.so
+Removing build directory /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpQS8uLT

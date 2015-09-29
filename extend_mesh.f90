@@ -7,13 +7,13 @@ module extend_mesh
     real(8),allocatable:: SAMB(:,:,:),SAMBXY(:,:,:),DSAMB(:,:,:)
 contains
     subroutine set_xyzc(a,b,c)
-	real(8),intent(in) :: a,b,c
-	xc = a
-	yc = b
-	zc = c
-	xyzc(1) = a
-	xyzc(2) = b
-	xyzc(3) = c
+    real(8),intent(in) :: a,b,c
+    xc = a
+    yc = b
+    zc = c
+    xyzc(1) = a
+    xyzc(2) = b
+    xyzc(3) = c
     end subroutine 
 
     subroutine comp_gaussian_info()

@@ -36,7 +36,7 @@ contains
     include 'test4.f90'
     include 'test3.f90'
     include 'test2.f90'
-    !include 'test.f90'
+    include 'test.f90'
         
     subroutine read_model_from_WAVDUT()
 

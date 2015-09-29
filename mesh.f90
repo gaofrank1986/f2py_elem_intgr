@@ -72,11 +72,11 @@ contains
 
         NELEM=NELEMB+NELEMF
 
-        ALLOCATE (NCONB(NELEMB,8),NCONDB(NELEMB,8))!body node/normal list
-        ALLOCATE (XYZB(3,NNB),DXYZB(3,NNBD))    !body node/normal
+        allocate (nconb(nelemb,8),ncondb(nelemb,8))!body node/normal list
+        allocate (xyzb(3,nnb),dxyzb(3,nnbd))    !body node/normal
         
 
-        ALLOCATE(NCN(NELEM),NCON(NELEM,8),NCOND(NELEM,8),IETYPE(NELEM))
+        allocate(ncn(nelem),ncon(nelem,8),ncond(nelem,8),ietype(nelem))
     
         allocate(NNORMN(8*NELEM) )
 
@@ -156,6 +156,9 @@ contains
 !
 50      CONTINUE
     end subroutine 
+
+
+!==============================    
 !       MESHFS4 + MESHBD 
 !
 !C *******************************************************************
@@ -182,7 +185,7 @@ contains
       !dampe(:,:)=0.0d0
 
 100    CONTINUE
-        ! in dat file ,positive nrml is set as pointing into fulid field
+        ! in dat file ,positive nrml is set as pointing outside/into fulid field
       DXYZE(1, 1:8, 1:NELEMF)= 0.0d0
       DXYZE(2, 1:8, 1:NELEMF)= 0.0d0
       DXYZE(3, 1:8, 1:NELEMF)= 1.0d0 
