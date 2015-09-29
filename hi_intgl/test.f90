@@ -175,10 +175,12 @@ subroutine eval_singular_elem(this_elem_id,num_edge,nf,ndim,hiresult,src_preset_
                     DRDNP=DABS(pt_intg(fixed_cmp)-src_lcl(fixed_cmp))/RHO_Q !sin(theta)
 
                            
+                    call compute_coeff_GH(num_dim,num_dim - 1,npw,elem_nd_count,n_pwr_g,src_glb &
+                                            & ,src_lcl,pt_intg,COEF_G,COEF_H)
                     
-                    call compute_coeff_G(ndim,ndim - 1,elem_nd_count,n_pwr_g,src_glb &
-                                        & ,src_lcl,pt_intg,COEF_G)
-                    call comp_coef_gh(n_pwr_g,npw,coef_g,coef_h)
+                    !call compute_coeff_G(ndim,ndim - 1,elem_nd_count,n_pwr_g,src_glb &
+                    !                    & ,src_lcl,pt_intg,COEF_G)
+                    !call comp_coef_gh(n_pwr_g,npw,coef_g,coef_h)
                     !             get coef_g and coef_h
                     !             why not inside integrate_Rho?????
 
