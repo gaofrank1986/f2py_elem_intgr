@@ -1,8 +1,6 @@
 module hi_intg 
 
-    !use hi_const
     use hi_mod_funcs
-    !use hi_target_func
     
     implicit none 
     
@@ -260,82 +258,81 @@ contains
 
 
    
-!     subroutine RIM_ELEMS()
+     subroutine RIM_ELEMS()
 
-!         implicit none 
+         implicit none 
 
-!         integer  :: num_edge,ie,id
+         integer  :: num_edge,ie,id
 
-! !         EXTERNAL INT_ELEM
+ !         EXTERNAL INT_ELEM
 
-!         IF(num_dim == 2) n_pwr_g = (elem_nd_count/3)*2               ! 0,  2
-!         IF(num_dim == 3) n_pwr_g = elem_nd_count/2+(elem_nd_count/9)*2        ! 2,  4,  6 
-!         ! refer to  Equ. 3-6-56 for parameter m
-     
-!         num_edge = 2 * (num_dim - 1 ) ! 4 -----how many edges
+         IF(num_dim == 2) n_pwr_g = (elem_nd_count/3)*2               ! 0,  2
+         IF(num_dim == 3) n_pwr_g = elem_nd_count/2+(elem_nd_count/9)*2        ! 2,  4,  6 
+         ! refer to  Equ. 3-6-56 for parameter m
+   
+         num_edge = 2 * (num_dim - 1 ) ! 4 -----how many edges
 
-!         ! NDSID=2+elem_nd_count/8 !3 !removed not used=== July 25th====
+         ! NDSID=2+elem_nd_count/8 !3 !removed not used=== July 25th====
 
-!         src_ctr_glb = 0. !src center global, define the center of src for calculating r
+         src_ctr_glb = 0. !src center global, define the center of src for calculating r
 
-!         do ie = 1,num_elem ! can introduce parallel here!!!!!!!!!!!!!!!!!
-!             If (src_flag(ie) == 0) THEN    
-!                 ! EVALUATE INTEGRAL OVER REGULAR ELEMENT
-!                 !CALL ADAPTINT_ELEM(ie,src_ctr_glb,cnr_lcl_mtx,value_list(ie),GPR,GWR,GPL,GWL,INT_ELEM)
-!                 print *," need evaluate integral over element,src not on element"            
-!             else     
-!                 CALL eval_SINGULAR_ELEM(ie,num_edge,value_list(ie,:),0)
-!             end if 
-!         end do
+         do ie = 1,num_elem ! can introduce parallel here!!!!!!!!!!!!!!!!!
+             If (src_flag(ie) == 0) THEN    
+                 !CALL ADAPTINT_ELEM(ie,src_ctr_glb,cnr_lcl_mtx,value_list(ie),GPR,GWR,GPL,GWL,INT_ELEM)
+                 print *," need evaluate integral over element,src not on element"            
+             else     
+                 CALL eval_SINGULAR_ELEM(ie,num_edge,8,num_dim,value_list(ie,:),0)
+             end if 
+         end do
 
-!         print *,"==========final result========="
-!         print *,sum(value_list)
-!         print *,"==============================="
-!         print *,"end of RIM_ELEMS"
-!     end subroutine
+        print *,"==========final result========="
+        print *,sum(value_list)
+        print *,"==============================="
+         print *,"end of RIM_ELEMS"
+     end subroutine
 
-!     subroutine initialise_ELEMS(x0,y0,z0)
+     subroutine initialise_ELEMS(x0,y0,z0)
 
-!         implicit none 
+        implicit none 
 
-!         real,intent(in) :: x0,y0,z0
-!         integer  :: num_edge,ie,id
+         real,intent(in) :: x0,y0,z0
+         integer  :: num_edge,ie,id
 
-!         !         EXTERNAL INT_ELEM
+         !         EXTERNAL INT_ELEM
 
-!         !-------------------------------------------
+         !-------------------------------------------
 
-!         IF(num_dim == 2) n_pwr_g = (elem_nd_count/3)*2               ! 0,  2
-!         IF(num_dim == 3) n_pwr_g = elem_nd_count/2+(elem_nd_count/9)*2        ! 2,  4,  6 
-!         ! refer to  Equ. 3-6-56 for parameter m
-     
-!         num_edge = 2 * (num_dim - 1 ) ! 4 -----how many edges
+        IF(num_dim == 2) n_pwr_g = (elem_nd_count/3)*2               ! 0,  2
+         IF(num_dim == 3) n_pwr_g = elem_nd_count/2+(elem_nd_count/9)*2        ! 2,  4,  6 
+         ! refer to  Equ. 3-6-56 for parameter m
+    
+         num_edge = 2 * (num_dim - 1 ) ! 4 -----how many edges
 
-!         external_src_ctr_flag = 1
-        
-!         if (external_src_ctr_flag .eq. 0) then
-!             src_ctr_glb = 0. !src center global, define the center of src for calculating r
-!         else
-!             src_ctr_glb(1) = x0
-!             src_ctr_glb(2) = y0
-!             src_ctr_glb(3) = z0
-!         end if
+         external_src_ctr_flag = 1
+       
+         if (external_src_ctr_flag .eq. 0) then
+             src_ctr_glb = 0. !src center global, define the center of src for calculating r
+         else
+             src_ctr_glb(1) = x0
+             src_ctr_glb(2) = y0
+             src_ctr_glb(3) = z0
+         end if
 
-!         !         do ie = 1,num_elem ! can introduce parallel here!!!!!!!!!!!!!!!!!
-!         !             If (src_flag(ie) == 0) THEN    
-!         !                 ! EVALUATE INTEGRAL OVER REGULAR ELEMENT
-!         !                 !CALL ADAPTINT_ELEM(ie,src_ctr_glb,cnr_lcl_mtx,value_list(ie),GPR,GWR,GPL,GWL,INT_ELEM)
-!         !                 print *," need evaluate integral over element,src not on element"            
-!         !             else     
-!         !                 CALL eval_SINGULAR_ELEM(ie,num_edge,value_list(ie,:))
-!         !             end if 
-!         !         end do
+         !         do ie = 1,num_elem ! can introduce parallel here!!!!!!!!!!!!!!!!!
+         !             If (src_flag(ie) == 0) THEN    
+         !                 ! EVALUATE INTEGRAL OVER REGULAR ELEMENT
+         !                 !CALL ADAPTINT_ELEM(ie,src_ctr_glb,cnr_lcl_mtx,value_list(ie),GPR,GWR,GPL,GWL,INT_ELEM)
+         !                 print *," need evaluate integral over element,src not on element"            
+         !             else     
+         !                 CALL eval_SINGULAR_ELEM(ie,num_edge,value_list(ie,:))
+         !             end if 
+         !         end do
 
-!         !         print *,"==========final result========="
-!         !         print *,sum(value_list)
-!         !         print *,"==============================="
-!         !         print *,"end of RIM_ELEMS"
-!     end subroutine
+         !         print *,"==========final result========="
+         !         print *,sum(value_list)
+         !         print *,"==============================="
+         !         print *,"end of RIM_ELEMS"
+     end subroutine
 end module
       
 
