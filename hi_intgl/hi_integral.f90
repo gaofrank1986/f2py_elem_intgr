@@ -61,7 +61,6 @@ contains
             ! number of node per element
             ! beta is the power of r in target equation
             ! number of target func components
-            num_intgd = 8                             !<<<===============================
             allocate(node_matrix(num_dim,num_node))
             allocate(elem_matrix(elem_nd_count,num_elem))
             allocate(src_flag(num_elem))

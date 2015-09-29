@@ -14,7 +14,7 @@
        ! end nodes recorder, shape function
         ! rho integration result
 
-        real(8),allocatable :: COEF_G(:),COEF_H(:),sf_src(:),gpl(:),gwl(:)
+        real(8),allocatable :: coef_g(:),coef_h(:),sf_src(:),gpl(:),gwl(:)
 
         !====================================================================
         integer :: id,ie,tmp,i_edge,ks,src_identifier,igl,num_converge
