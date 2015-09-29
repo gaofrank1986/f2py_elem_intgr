@@ -6,6 +6,7 @@ module elem_intgl
     
 contains
     include 'ElemIntgl1.f90'
+    include 'tgreen.f90'
 !  NORM_ELE0+TSING0
 !  NORM_INT0+SING_INT0
 ! ======================================================
@@ -127,7 +128,7 @@ contains
 
       REAL*8  NX,NY,NZ,DGN
       REAL*8  AVAL(4,8),BVAL(4,8),GXF(4)
-!   
+        real(8) :: pos_glb(3),src_glb(3)   
       DATA EX/  1.0d0,  1.0d0, -1.0d0, -1.0d0,    &
                 1.0d0,  1.0d0, -1.0d0, -1.0d0,    &
                -1.0d0, -1.0d0,  1.0d0,  1.0d0,    &
@@ -142,21 +143,21 @@ contains
 !    PRINT *,' IN  NORM_INT0'
 !
 
-       X0=EX(IS,1)*XP
-       Y0=EY(IS,1)*YP
-       Z0= ZP
+       src_glb(1)=EX(IS,1)*XP
+       src_glb(2)=EY(IS,1)*YP
+       src_glb(3)= ZP
 
         NSAMB=16
         IF(NCNE.EQ.6)   NSAMB=4
 
         DO 100    N=1,   NSAMB     
 
-       X =SAMBXY(IELEM,N,1)
-       Y =SAMBXY(IELEM,N,2)
-       Z =SAMBXY(IELEM,N,3)
+       pos_glb(1:3) =SAMBXY(IELEM,N,1:3)
+       !Y =SAMBXY(IELEM,N,2)
+       !Z =SAMBXY(IELEM,N,3)
 
-       CALL TGRN (H,X,X0,Y,Y0,Z,Z0,GXF) 
-! 
+       !CALL TGRN (H,X,X0,Y,Y0,Z,Z0,GXF) 
+        call green_func(h,pos_glb(3),src_glb(3),gxf)
          NX=DSAMB(IELEM,N,1)
          NY=DSAMB(IELEM,N,2)
          NZ=DSAMB(IELEM,N,3)
@@ -188,7 +189,7 @@ contains
        REAL*8  X,Y,Z,X0,Y0,Z0      
        REAL*8  NX,NY,NZ,DGN
        REAL*8  AVAL(4,8),BVAL(4,8),GXF(4)
-!
+        real(8) :: src_glb(3),pos_glb(3)
       DATA EX/  1.0d0,  1.0d0, -1.0d0, -1.0d0,    &
                 1.0d0,  1.0d0, -1.0d0, -1.0d0,    &
                -1.0d0, -1.0d0,  1.0d0,  1.0d0,    &
@@ -203,17 +204,17 @@ contains
 201   FORMAT(' In SING_INT0    XP, YP, ZP=',3F12.4)
 !
  
-      X0=EX(IS,1)*XP
-      Y0=EY(IS,1)*YP
-      Z0= ZP
+      src_glb(1)=EX(IS,1)*XP
+      src_glb(2)=EY(IS,1)*YP
+      src_glb(3)= ZP
 
       DO 130 N=1, NOSAMP
     
-      X =XYNOD(1,N)
-      Y =XYNOD(2,N)
-      Z =XYNOD(3,N)
-
-      CALL  TGRN (H,X,X0,Y,Y0,Z,Z0,GXF) 
+      !X =XYNOD(1,N)
+      !Y =XYNOD(2,N)
+      !Z =XYNOD(3,N)
+      pos_glb(1:3) = xynod(1:3,n)
+      !CALL  TGRN (H,X,X0,Y,Y0,Z,Z0,GXF) 
 !
         DGN=GXF(2)*DXYNOD(1,N)+GXF(3)*DXYNOD(2,N)+   &
               GXF(4)*DXYNOD(3,N)             

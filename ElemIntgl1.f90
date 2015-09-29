@@ -326,7 +326,7 @@
 
         ! CHANGE OF normal vector
         !---
-        call eval_singular_elem(IELEM,4,result0,1)!!GREEN FUNC 
+        call eval_singular_elem(IELEM,4,8,3,result0,1)!!GREEN FUNC 
         !subroutine eval_singular_elem(this_elem_id,num_edge,result,src_preset_flag)
 
         print *,"end of eval singular elem"
