@@ -87,7 +87,7 @@
             goto 20
 !  10    coefg(ip)=((dsqrt(r2)/rho)**2-coefg(0))/rho     ! eq.(3-6-60)
 
- 10    coefg(ip)=((new_norm3(ri)/rho)**2-coefg(0))/rho     ! eq.(3-6-60)
+ 10    coefg(ip)=((norm2(ri)/rho)**2-coefg(0))/rho     ! eq.(3-6-60)
 
        rmat(ip,1)=1.d0        ! eq.(3-6-42)
        do jp=2,npowg; rmat(ip,jp)=rmat(ip,jp-1)*rho; enddo

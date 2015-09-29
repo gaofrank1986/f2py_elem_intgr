@@ -71,7 +71,7 @@
             RI=MATMUL(GCD,SLOP); COEFG(0)=DOT_PRODUCT(RI,RI)  ! Eq.(3-6-58)
             GOTO 20
 !  10    COEFG(IP)=((DSQRT(R2)/RHO)**2-COEFG(0))/RHO     ! Eq.(3-6-60)
- 10    COEFG(IP)=((new_norm3(RI)/RHO)**2-COEFG(0))/RHO     ! Eq.(3-6-60)
+ 10    COEFG(IP)=((norm2(RI)/RHO)**2-COEFG(0))/RHO     ! Eq.(3-6-60)
 
        RMAT(IP,1)=1.D0        ! Eq.(3-6-42)
        DO JP=2,NPOWG; RMAT(IP,JP)=RMAT(IP,JP-1)*RHO; ENDDO

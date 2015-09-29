@@ -42,7 +42,7 @@
             CALL SHAPEF(NDIM,NODE,cnr_lcl_mtx,cnr_glb_mtx,XI,XP,RI,SF_iter)
             !shape func based on xi
             !ri give distance vector from xp(it is src_glb) to xi (update along rho)
-            R = new_norm3(RI)
+            R = norm2(RI)
 
             X=XP+RI
           

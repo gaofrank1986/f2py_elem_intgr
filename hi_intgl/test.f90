@@ -140,7 +140,7 @@
                         goto 100
                     end if
                     
-                    ri_tmp = new_norm2(pt_intg_tmp-src_lcl) 
+                    ri_tmp = norm2(pt_intg_tmp-src_lcl) 
                     ! this is r from temporary integration point to local src point
 
                     if (0..GE.sign_value*diff_1) then
@@ -171,7 +171,7 @@
                         pt_intg(unfixed_cmp)=pt_intg_tmp(unfixed_cmp)+step_size*(1.D0+GPL(IGL))
                         ! update integration point position
                         
-                        RHO_Q=new_norm2(pt_intg-src_lcl)
+                        RHO_Q=norm2(pt_intg-src_lcl)
                         ! recaluate rho_q
                         
                         DRDNP=DABS(pt_intg(fixed_cmp)-src_lcl(fixed_cmp))/RHO_Q !sin(theta)

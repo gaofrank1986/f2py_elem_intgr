@@ -79,7 +79,7 @@ contains
                 read(5,*) tmp,(elem_matrix(id,tmp),id=1,elem_nd_count),src_flag(tmp)    ! card set 3
             end do
             !====src_flag
-            ! if = 0 src not on elem
+            ! if = 0 not valid
             ! if > 0 src is given in global coordinate, use node with id (src_flag)
             ! if < 0 src is given in local coordinate, use local src list given in card set 4
 

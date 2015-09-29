@@ -21,7 +21,7 @@
 
         hiresult=0.D0 ! output initialization 
         SLOP = pt_intg - src_lcl
-        rho_q = new_norm2(SLOP)
+        rho_q = norm2(SLOP)
         SLOP = SLOP/rho_q ! normalized vector, cos(theta),sin(theta)
 
         !!! -------------Compute n_pwr_k
