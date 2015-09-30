@@ -17,13 +17,13 @@ contains
     end subroutine 
 
     subroutine comp_gaussian_info()
-        iMPLICIT   NONE  
+        implicit   none  
 
-      INTEGER IE,K,J,LK,LI,LJ,ISI,IETA,NSAMB,IND 
-        REAL*8 XITSI(4),XITETA(4),WIT(4),XIQ(4),WIQ(4)
-        REAL*8 SF(8),DSF(2,8),XJ(3,3) 
+        integer ie,k,j,lk,li,lj,isi,ieta,nsamb,ind 
+        real*8 xitsi(4),xiteta(4),wit(4),xiq(4),wiq(4)
+        real*8 sf(8),dsf(2,8),xj(3,3) 
 
-        REAL*8 DET,DET1,DET2,DET3,DUM,SI,ETA 
+        real*8 det,det1,det2,det3,dum,si,eta 
 
 !C                      
 !C

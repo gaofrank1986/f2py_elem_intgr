@@ -1,0 +1,1265 @@
+running build
+running config_cc
+unifing config_cc, config, build_clib, build_ext, build commands --compiler options
+running config_fc
+unifing config_fc, config, build_clib, build_ext, build commands --fcompiler options
+running build_src
+build_src
+building extension "elem" sources
+f2py options: []
+f2py:> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elemmodule.c
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7
+Reading fortran codes...
+	Reading file 'ElemIntgl0.f90' (format:free)
+	Reading file 'ElemIntgl1.f90' (format:fix)
+	Reading file 'tgreen.f90' (format:fix)
+	Reading file 'mesh.f90' (format:free)
+	Reading file 'extend_mesh.f90' (format:free)
+	Reading file 'mod_func.f90' (format:free)
+	Reading file 'tripole_mod.f90' (format:free)
+	Reading file './hi_intgl/hi_integral.f90' (format:free)
+	Reading file './hi_intgl/hi_const.f90' (format:free)
+	Reading file './hi_intgl/test6.f90' (format:free)
+	Reading file './hi_intgl/test3.f90' (format:free)
+	Reading file './hi_intgl/test2.f90' (format:free)
+	Reading file './hi_intgl/test.f90' (format:free)
+	Reading file './hi_intgl/hi_integrand.f90' (format:free)
+	Reading file './hi_intgl/run_thru_elems.f90' (format:free)
+	Reading file './hi_intgl/hi_funcs.f90' (format:free)
+crackline: groupcounter=3 groupname={0: '', 1: 'module', 2: 'interface', 3: 'module', 4: 'module', 5: 'subroutine'}
+crackline: Mismatch of blocks encountered. Trying to fix it by assuming "end" statement.
+crackline: groupcounter=2 groupname={0: '', 1: 'module', 2: 'interface', 3: 'module', 4: 'module', 5: 'subroutine'}
+crackline: Mismatch of blocks encountered. Trying to fix it by assuming "end" statement.
+crackline: groupcounter=1 groupname={0: '', 1: 'module', 2: 'interface', 3: 'module', 4: 'module', 5: 'subroutine'}
+crackline: Mismatch of blocks encountered. Trying to fix it by assuming "end" statement.
+Post-processing...
+	Block: elem
+			Block: elem_intgl
+In: :elem:ElemIntgl0.f90:elem_intgl
+get_useparameters: no module mesh info used by elem_intgl
+In: :elem:ElemIntgl0.f90:elem_intgl
+get_useparameters: no module extend_mesh info used by elem_intgl
+In: :elem:ElemIntgl0.f90:elem_intgl
+get_useparameters: no module tripole_mod info used by elem_intgl
+				Block: norm_ele1
+In: :elem:ElemIntgl0.f90:elem_intgl:norm_ele1
+get_useparameters: no module mesh info used by norm_ele1
+In: :elem:ElemIntgl0.f90:elem_intgl:norm_ele1
+get_useparameters: no module extend_mesh info used by norm_ele1
+In: :elem:ElemIntgl0.f90:elem_intgl:norm_ele1
+get_useparameters: no module tripole_mod info used by norm_ele1
+				Block: sing_ele1
+In: :elem:ElemIntgl0.f90:elem_intgl:sing_ele1
+get_useparameters: no module mesh info used by sing_ele1
+In: :elem:ElemIntgl0.f90:elem_intgl:sing_ele1
+get_useparameters: no module extend_mesh info used by sing_ele1
+In: :elem:ElemIntgl0.f90:elem_intgl:sing_ele1
+get_useparameters: no module tripole_mod info used by sing_ele1
+				Block: norm_int1
+In: :elem:ElemIntgl0.f90:elem_intgl:norm_int1
+get_useparameters: no module mesh info used by norm_int1
+In: :elem:ElemIntgl0.f90:elem_intgl:norm_int1
+get_useparameters: no module extend_mesh info used by norm_int1
+In: :elem:ElemIntgl0.f90:elem_intgl:norm_int1
+get_useparameters: no module tripole_mod info used by norm_int1
+				Block: green_func
+In: :elem:ElemIntgl0.f90:elem_intgl:green_func
+get_useparameters: no module mesh info used by green_func
+In: :elem:ElemIntgl0.f90:elem_intgl:green_func
+get_useparameters: no module extend_mesh info used by green_func
+In: :elem:ElemIntgl0.f90:elem_intgl:green_func
+get_useparameters: no module tripole_mod info used by green_func
+				Block: tgrn
+In: :elem:ElemIntgl0.f90:elem_intgl:tgrn
+get_useparameters: no module mesh info used by tgrn
+In: :elem:ElemIntgl0.f90:elem_intgl:tgrn
+get_useparameters: no module extend_mesh info used by tgrn
+In: :elem:ElemIntgl0.f90:elem_intgl:tgrn
+get_useparameters: no module tripole_mod info used by tgrn
+				Block: dtgrn
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn
+get_useparameters: no module mesh info used by dtgrn
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn
+get_useparameters: no module extend_mesh info used by dtgrn
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn
+get_useparameters: no module tripole_mod info used by dtgrn
+				Block: dtgrn0
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn0
+get_useparameters: no module mesh info used by dtgrn0
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn0
+get_useparameters: no module extend_mesh info used by dtgrn0
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn0
+get_useparameters: no module tripole_mod info used by dtgrn0
+				Block: dtgrn1
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn1
+get_useparameters: no module mesh info used by dtgrn1
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn1
+get_useparameters: no module extend_mesh info used by dtgrn1
+In: :elem:ElemIntgl0.f90:elem_intgl:dtgrn1
+get_useparameters: no module tripole_mod info used by dtgrn1
+				Block: green1
+In: :elem:ElemIntgl0.f90:elem_intgl:green1
+get_useparameters: no module mesh info used by green1
+In: :elem:ElemIntgl0.f90:elem_intgl:green1
+get_useparameters: no module extend_mesh info used by green1
+In: :elem:ElemIntgl0.f90:elem_intgl:green1
+get_useparameters: no module tripole_mod info used by green1
+				Block: mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh
+get_useparameters: no module mesh info used by mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh
+get_useparameters: no module extend_mesh info used by mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh
+get_useparameters: no module tripole_mod info used by mesh
+					Block: read_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:read_mesh
+get_useparameters: no module mesh info used by read_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:read_mesh
+get_useparameters: no module extend_mesh info used by read_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:read_mesh
+get_useparameters: no module tripole_mod info used by read_mesh
+					Block: prepare_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:prepare_mesh
+get_useparameters: no module mesh info used by prepare_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:prepare_mesh
+get_useparameters: no module extend_mesh info used by prepare_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:prepare_mesh
+get_useparameters: no module tripole_mod info used by prepare_mesh
+					Block: meshfs4
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:meshfs4
+get_useparameters: no module mesh info used by meshfs4
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:meshfs4
+get_useparameters: no module extend_mesh info used by meshfs4
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:meshfs4
+get_useparameters: no module tripole_mod info used by meshfs4
+					Block: meshbd
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:meshbd
+get_useparameters: no module mesh info used by meshbd
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:meshbd
+get_useparameters: no module extend_mesh info used by meshbd
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:meshbd
+get_useparameters: no module tripole_mod info used by meshbd
+					Block: convsb
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:convsb
+get_useparameters: no module mesh info used by convsb
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:convsb
+get_useparameters: no module extend_mesh info used by convsb
+In: :elem:ElemIntgl0.f90:elem_intgl:mesh:convsb
+get_useparameters: no module tripole_mod info used by convsb
+				Block: extend_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh
+get_useparameters: no module mod_func info used by extend_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh
+get_useparameters: no module extend_mesh info used by extend_mesh
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh
+get_useparameters: no module tripole_mod info used by extend_mesh
+					Block: set_xyzc
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh:set_xyzc
+get_useparameters: no module mod_func info used by set_xyzc
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh:set_xyzc
+get_useparameters: no module extend_mesh info used by set_xyzc
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh:set_xyzc
+get_useparameters: no module tripole_mod info used by set_xyzc
+					Block: comp_gaussian_info
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh:comp_gaussian_info
+get_useparameters: no module mod_func info used by comp_gaussian_info
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh:comp_gaussian_info
+get_useparameters: no module extend_mesh info used by comp_gaussian_info
+In: :elem:ElemIntgl0.f90:elem_intgl:extend_mesh:comp_gaussian_info
+get_useparameters: no module tripole_mod info used by comp_gaussian_info
+				Block: mod_func
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func
+get_useparameters: no module tripole_mod info used by mod_func
+					Block: eti
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:eti
+get_useparameters: no module tripole_mod info used by eti
+					Block: poxy
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:poxy
+get_useparameters: no module tripole_mod info used by poxy
+					Block: dpot
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:dpot
+get_useparameters: no module tripole_mod info used by dpot
+					Block: dinp
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:dinp
+get_useparameters: no module tripole_mod info used by dinp
+					Block: dinp0
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:dinp0
+get_useparameters: no module tripole_mod info used by dinp0
+					Block: spfunc6
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:spfunc6
+get_useparameters: no module tripole_mod info used by spfunc6
+					Block: spfunc8
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:spfunc8
+get_useparameters: no module tripole_mod info used by spfunc8
+					Block: spfunc6_1
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:spfunc6_1
+get_useparameters: no module tripole_mod info used by spfunc6_1
+					Block: spfunc8_1
+In: :elem:ElemIntgl0.f90:elem_intgl:mod_func:spfunc8_1
+get_useparameters: no module tripole_mod info used by spfunc8_1
+				Block: tripole_mod
+In: :elem:ElemIntgl0.f90:elem_intgl:tripole_mod
+get_useparameters: no module tripole_mod info used by tripole_mod
+					Block: tripol
+In: :elem:ElemIntgl0.f90:elem_intgl:tripole_mod:tripol
+get_useparameters: no module tripole_mod info used by tripol
+				Block: hi_intg
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg
+get_useparameters: no module hi_mod_funcs info used by hi_intg
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg
+get_parameters: got "invalid syntax (<string>, line 1)" on '(/-1.,-1.,1.,-1.,1.,1.,-1.,1.,0.,-1.,1.,0.,0.,1.,-1.,0.,0.,0./)'
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg
+get_parameters: got "invalid syntax (<string>, line 1)" on 'reshape((/1.,0.,0.,0.,1.,0.,0.,0.,1./),(/3,3/))'
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg
+get_parameters: got "invalid syntax (<string>, line 1)" on '(/-2,1,2,-1/)'
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg
+get_parameters: got "invalid syntax (<string>, line 1)" on '(/1,2,5, 2,3,6, 3,4,7, 4,1,8/)'
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg
+get_parameters: got "name 'datan' is not defined" on '4.e0*datan(1.e0)'
+					Block: compute_coeff_gh
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:compute_coeff_gh
+get_useparameters: no module hi_mod_funcs info used by compute_coeff_gh
+					Block: compute_coeff_g
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:compute_coeff_g
+get_useparameters: no module hi_mod_funcs info used by compute_coeff_g
+					Block: compute_coeff_b
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:compute_coeff_b
+get_useparameters: no module hi_mod_funcs info used by compute_coeff_b
+					Block: integrate_rho
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:integrate_rho
+get_useparameters: no module hi_mod_funcs info used by integrate_rho
+					Block: eval_singular_elem
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:eval_singular_elem
+get_useparameters: no module hi_mod_funcs info used by eval_singular_elem
+					Block: f_integrand
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:f_integrand
+get_useparameters: no module hi_mod_funcs info used by f_integrand
+					Block: set_npwg
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:set_npwg
+get_useparameters: no module hi_mod_funcs info used by set_npwg
+					Block: set_src_preset
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:set_src_preset
+get_useparameters: no module hi_mod_funcs info used by set_src_preset
+					Block: rim_elems
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:rim_elems
+get_useparameters: no module hi_mod_funcs info used by rim_elems
+					Block: get_node_matrix
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:get_node_matrix
+get_useparameters: no module hi_mod_funcs info used by get_node_matrix
+					Block: read_model_from_dat
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:read_model_from_dat
+get_useparameters: no module hi_mod_funcs info used by read_model_from_dat
+					Block: read_model_from_wavdut
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:read_model_from_wavdut
+get_useparameters: no module hi_mod_funcs info used by read_model_from_wavdut
+					Block: swap_result
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_intg:swap_result
+get_useparameters: no module hi_mod_funcs info used by swap_result
+				Block: hi_mod_funcs
+					Block: new_norm2
+					Block: new_norm3
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:gaussv
+vars2fortran: No typespec for argument "ngaus".
+{'attrspec': ['dimension(ngaus)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:gaussv
+vars2fortran: No typespec for argument "gp".
+{'attrspec': ['dimension(ngaus)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:gaussv
+vars2fortran: No typespec for argument "gw".
+					Block: gaussv
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:invsolvr
+vars2fortran: No typespec for argument "nrow".
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:invsolvr
+vars2fortran: No typespec for argument "ncol".
+{'attrspec': ['dimension(nrow,ncol)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:invsolvr
+vars2fortran: No typespec for argument "a".
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:invsolvr
+vars2fortran: No typespec for argument "n".
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:invsolvr
+vars2fortran: No typespec for argument "indic".
+					Block: invsolvr
+					Block: shapef
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "ndim".
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "node".
+{'attrspec': ['dimension(*)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "c".
+{'attrspec': ['dimension(3,*)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "ck".
+{'attrspec': ['dimension(*)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "x".
+{'attrspec': ['dimension(*)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "cosn".
+{}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "fjcb".
+{'attrspec': ['dimension(3,*)']}
+In: :elem:ElemIntgl0.f90:elem_intgl:hi_mod_funcs:dshape
+vars2fortran: No typespec for argument "gd".
+					Block: dshape
+Post-processing (stage 2)...
+	Block: elem
+		Block: unknown_interface
+			Block: elem_intgl
+				Block: norm_ele1
+				Block: sing_ele1
+				Block: norm_int1
+				Block: green_func
+				Block: tgrn
+				Block: dtgrn
+				Block: dtgrn0
+				Block: dtgrn1
+				Block: green1
+				Block: mesh
+					Block: read_mesh
+					Block: prepare_mesh
+					Block: meshfs4
+					Block: meshbd
+					Block: convsb
+				Block: extend_mesh
+					Block: set_xyzc
+					Block: comp_gaussian_info
+				Block: mod_func
+					Block: eti
+					Block: poxy
+					Block: dpot
+					Block: dinp
+					Block: dinp0
+					Block: spfunc6
+					Block: spfunc8
+					Block: spfunc6_1
+					Block: spfunc8_1
+				Block: tripole_mod
+					Block: tripol
+				Block: hi_intg
+					Block: compute_coeff_gh
+					Block: compute_coeff_g
+					Block: compute_coeff_b
+					Block: integrate_rho
+					Block: eval_singular_elem
+					Block: f_integrand
+					Block: set_npwg
+					Block: set_src_preset
+					Block: rim_elems
+					Block: get_node_matrix
+					Block: read_model_from_dat
+					Block: read_model_from_wavdut
+					Block: swap_result
+				Block: hi_mod_funcs
+					Block: new_norm2
+					Block: new_norm3
+					Block: gaussv
+					Block: invsolvr
+					Block: shapef
+					Block: dshape
+Building modules...
+	Building module "elem"...
+		Constructing F90 module support for "elem_intgl"...
+			Constructing wrapper function "elem_intgl.norm_ele1"...
+			  norm_ele1(ielem,xp,yp,zp,amatrix,bmatrix)
+			Constructing wrapper function "elem_intgl.sing_ele1"...
+			  sing_ele1(inode,ielem,numqua,xp,yp,zp,amatrix,bmatrix)
+			Constructing wrapper function "elem_intgl.norm_int1"...
+			  norm_int1(is,ielem,ncne,xp,yp,zp,amatrix,bmatrix)
+			Constructing wrapper function "elem_intgl.green_func"...
+			  xhf = green_func(h,pos_glb,src_glb)
+			Constructing wrapper function "elem_intgl.tgrn"...
+			  xhf = tgrn(h,pos_glb,src_glb)
+			Constructing wrapper function "elem_intgl.dtgrn"...
+			  xhf = dtgrn(h,x,x0,y,y0,z,z0)
+			Constructing wrapper function "elem_intgl.dtgrn0"...
+			  xhf = dtgrn0(h,x,x0,y,y0,z,z0)
+			Constructing wrapper function "elem_intgl.dtgrn1"...
+			  xhf = dtgrn1(h,x,x0,y,y0,z,z0)
+			Constructing wrapper function "elem_intgl.green1"...
+			  xff = green1(h,x,x0,y,y0,z,z0)
+Skipping module mesh
+Skipping module extend_mesh
+Skipping module mod_func
+Skipping module tripole_mod
+Skipping module hi_intg
+Skipping module hi_mod_funcs
+	Wrote C/API module "elem" to file "/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elemmodule.c"
+	Fortran 90 wrappers are saved to "/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elem-f2pywrappers2.f90"
+  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/fortranobject.c' to sources.
+  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7' to include_dirs.
+copying /usr/local/lib/python2.7/site-packages/numpy/f2py/src/fortranobject.c -> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7
+copying /usr/local/lib/python2.7/site-packages/numpy/f2py/src/fortranobject.h -> /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7
+  adding '/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elem-f2pywrappers2.f90' to sources.
+build_src: building npy-pkg config files
+running build_ext
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+customize Gnu95FCompiler
+Found executable /usr/local/bin/gfortran
+customize Gnu95FCompiler
+customize Gnu95FCompiler using build_ext
+building 'elem' extension
+compiling C sources
+C compiler: clang -fno-strict-aliasing -fno-common -dynamic -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
+
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7
+compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+clang: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elemmodule.c
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elemmodule.c:18:
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/fortranobject.h:13:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:17:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1804:
+/usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "          "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elemmodule.c:104:12: warning: unused function 'f2py_size' [-Wunused-function]
+static int f2py_size(PyArrayObject* var, ...)
+           ^
+2 warnings generated.
+clang: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/fortranobject.c
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/fortranobject.c:2:
+In file included from /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/fortranobject.h:13:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:17:
+In file included from /usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1804:
+/usr/local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "          "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+compiling Fortran 90 module sources
+Fortran f77 compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3 -funroll-loops
+Fortran f90 compiler: /usr/local/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
+Fortran fix compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
+creating /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/hi_intgl
+compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+extra options: '-J/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/ -I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/'
+gfortran:f90: ElemIntgl0.f90
+ElemIntgl0.f90:204:3:
+
+ 201   FORMAT(' In SING_INT0    XP, YP, ZP=',3F12.4)
+   1
+Warning: Label 201 at (1) defined but not used
+tgreen.f90:44:3:
+
+ 120    CONTINUE
+   1
+Warning: Label 120 at (1) defined but not used
+ElemIntgl0.f90:160:26:
+
+         call green_func(h,pos_glb(3),src_glb(3),gxf)
+                          1
+Warning: Actual argument contains too few elements for dummy argument 'pos_glb' (1/3) at (1)
+ElemIntgl0.f90:187:30:
+
+        INTEGER IS,IELEM,N,J,IP       
+                              1
+Warning: Unused variable 'ip' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:190:17:
+
+        REAL*8  NX,NY,NZ,DGN
+                 1
+Warning: Unused variable 'nx' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:190:20:
+
+        REAL*8  NX,NY,NZ,DGN
+                    1
+Warning: Unused variable 'ny' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:190:23:
+
+        REAL*8  NX,NY,NZ,DGN
+                       1
+Warning: Unused variable 'nz' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:189:16:
+
+        REAL*8  X,Y,Z,X0,Y0,Z0      
+                1
+Warning: Unused variable 'x' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:189:23:
+
+        REAL*8  X,Y,Z,X0,Y0,Z0      
+                       1
+Warning: Unused variable 'x0' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:189:18:
+
+        REAL*8  X,Y,Z,X0,Y0,Z0      
+                  1
+Warning: Unused variable 'y' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:189:26:
+
+        REAL*8  X,Y,Z,X0,Y0,Z0      
+                          1
+Warning: Unused variable 'y0' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:189:20:
+
+        REAL*8  X,Y,Z,X0,Y0,Z0      
+                    1
+Warning: Unused variable 'z' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:189:29:
+
+        REAL*8  X,Y,Z,X0,Y0,Z0      
+                             1
+Warning: Unused variable 'z0' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:125:40:
+
+       INTEGER IS,IELEM,N,NSAMB,NCNE,J,IP
+                                        1
+Warning: Unused variable 'ip' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:127:15:
+
+       REAL*8  X,Y,Z,X0,Y0,Z0   
+               1
+Warning: Unused variable 'x' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:127:22:
+
+       REAL*8  X,Y,Z,X0,Y0,Z0   
+                      1
+Warning: Unused variable 'x0' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:127:17:
+
+       REAL*8  X,Y,Z,X0,Y0,Z0   
+                 1
+Warning: Unused variable 'y' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:127:25:
+
+       REAL*8  X,Y,Z,X0,Y0,Z0   
+                         1
+Warning: Unused variable 'y0' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:127:19:
+
+       REAL*8  X,Y,Z,X0,Y0,Z0   
+                   1
+Warning: Unused variable 'z' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:127:28:
+
+       REAL*8  X,Y,Z,X0,Y0,Z0   
+                            1
+Warning: Unused variable 'z0' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:52:17:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NUMQUA
+                 1
+Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:52:42:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NUMQUA
+                                          1
+Warning: Unused variable 'nd' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:52:45:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NUMQUA
+                                             1
+Warning: Unused variable 'np' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:22:24:
+
+         INTEGER  IS,ND,J,NP,IELEM,NCNE
+                        1
+Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:22:22:
+
+         INTEGER  IS,ND,J,NP,IELEM,NCNE
+                      1
+Warning: Unused variable 'nd' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:22:27:
+
+         INTEGER  IS,ND,J,NP,IELEM,NCNE
+                           1
+Warning: Unused variable 'np' declared at (1) [-Wunused-variable]
+tgreen.f90:251:23:
+
+         REAL*8 DX,DY,DZ,DZ1
+                       1
+Warning: Unused variable 'dz' declared at (1) [-Wunused-variable]
+tgreen.f90:252:24:
+
+         REAL*8 RXY2,DZ02,DZ12,SR2,ST2,SR,SR3,SR5,ST,ST3,ST5
+                        1
+Warning: Unused variable 'dz02' declared at (1) [-Wunused-variable]
+tgreen.f90:252:40:
+
+         REAL*8 RXY2,DZ02,DZ12,SR2,ST2,SR,SR3,SR5,ST,ST3,ST5
+                                        1
+Warning: Unused variable 'sr' declared at (1) [-Wunused-variable]
+tgreen.f90:252:33:
+
+         REAL*8 RXY2,DZ02,DZ12,SR2,ST2,SR,SR3,SR5,ST,ST3,ST5
+                                 1
+Warning: Unused variable 'sr2' declared at (1) [-Wunused-variable]
+tgreen.f90:252:44:
+
+         REAL*8 RXY2,DZ02,DZ12,SR2,ST2,SR,SR3,SR5,ST,ST3,ST5
+                                            1
+Warning: Unused variable 'sr3' declared at (1) [-Wunused-variable]
+tgreen.f90:252:48:
+
+         REAL*8 RXY2,DZ02,DZ12,SR2,ST2,SR,SR3,SR5,ST,ST3,ST5
+                                                1
+Warning: Unused variable 'sr5' declared at (1) [-Wunused-variable]
+tgreen.f90:195:27:
+
+         SUBROUTINE DTGRN0(H,X,X0,Y,Y0,Z,Z0,XHF) 
+                           1
+Warning: Unused dummy argument 'h' at (1) [-Wunused-dummy-argument]
+tgreen.f90:57:17:
+
+         REAL*8 DX,DY,DZ,DZ1,diff(4)
+                 1
+Warning: Unused variable 'dx' declared at (1) [-Wunused-variable]
+tgreen.f90:57:20:
+
+         REAL*8 DX,DY,DZ,DZ1,diff(4)
+                    1
+Warning: Unused variable 'dy' declared at (1) [-Wunused-variable]
+tgreen.f90:57:23:
+
+         REAL*8 DX,DY,DZ,DZ1,diff(4)
+                       1
+Warning: Unused variable 'dz' declared at (1) [-Wunused-variable]
+tgreen.f90:57:27:
+
+         REAL*8 DX,DY,DZ,DZ1,diff(4)
+                           1
+Warning: Unused variable 'dz1' declared at (1) [-Wunused-variable]
+tgreen.f90:9:21:
+
+         real(8) :: dx,dy,dz,dz1,diff(4)
+                     1
+Warning: Unused variable 'dx' declared at (1) [-Wunused-variable]
+tgreen.f90:9:24:
+
+         real(8) :: dx,dy,dz,dz1,diff(4)
+                        1
+Warning: Unused variable 'dy' declared at (1) [-Wunused-variable]
+tgreen.f90:9:27:
+
+         real(8) :: dx,dy,dz,dz1,diff(4)
+                           1
+Warning: Unused variable 'dz' declared at (1) [-Wunused-variable]
+tgreen.f90:9:31:
+
+         real(8) :: dx,dy,dz,dz1,diff(4)
+                               1
+Warning: Unused variable 'dz1' declared at (1) [-Wunused-variable]
+tgreen.f90:5:17:
+
+         integer i
+                 1
+Warning: Unused variable 'i' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:27:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                           1
+Warning: Unused variable 'csst' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:197:29:
+
+         integer :: debug_flag = 1,pwr_g
+                             1
+Warning: Unused variable 'debug_flag' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:186:35:
+
+     REAL*8  DPOX,DPOY,DPOZ,DGN,DGN0,DGN1
+                                   1
+Warning: Unused variable 'dgn0' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:186:40:
+
+     REAL*8  DPOX,DPOY,DPOZ,DGN,DGN0,DGN1
+                                        1
+Warning: Unused variable 'dgn1' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:186:16:
+
+     REAL*8  DPOX,DPOY,DPOZ,DGN,DGN0,DGN1
+                1
+Warning: Unused variable 'dpox' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:186:21:
+
+     REAL*8  DPOX,DPOY,DPOZ,DGN,DGN0,DGN1
+                     1
+Warning: Unused variable 'dpoy' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:186:26:
+
+     REAL*8  DPOX,DPOY,DPOZ,DGN,DGN0,DGN1
+                          1
+Warning: Unused variable 'dpoz' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:39:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                       1
+Warning: Unused variable 'dsf' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:184:27:
+
+     REAL*8  XSB,YSB,ZSB,DUM,WKX,PHI  
+                           1
+Warning: Unused variable 'dum' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:183:29:
+
+     REAL*8  X,Y,Z,X0,Y0,Z0,DX,DY,DZ,R,GXF(4)!,GXF0(4),GXF1(4)       
+                             1
+Warning: Unused variable 'dx' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:183:32:
+
+     REAL*8  X,Y,Z,X0,Y0,Z0,DX,DY,DZ,R,GXF(4)!,GXF0(4),GXF1(4)       
+                                1
+Warning: Unused variable 'dy' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:183:35:
+
+     REAL*8  X,Y,Z,X0,Y0,Z0,DX,DY,DZ,R,GXF(4)!,GXF0(4),GXF1(4)       
+                                   1
+Warning: Unused variable 'dz' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:201:33:
+
+         real(8) :: XIT(7),ETAT(7),WIT(9)
+                                 1
+Warning: Unused variable 'etat' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:36:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                                    1
+Warning: Unused variable 'f' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:31:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                               1
+Warning: Unused variable 'f1' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:34:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                                  1
+Warning: Unused variable 'f2' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:50:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                                                  1
+Warning: Unused variable 'gxf0' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:55:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                                                       1
+Warning: Unused variable 'gxf1' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:171:25:
+
+     Integer Loop1,Loop2,I,NSAMB
+                         1
+Warning: Unused variable 'i' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:170:18:
+
+     INTEGER N,J,IP   
+                  1
+Warning: Unused variable 'ip' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:54:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                                      1
+Warning: Unused variable 'jk0' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:23:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                       1
+Warning: Unused variable 'jk1c' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:28:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                            1
+Warning: Unused variable 'jk1s' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:170:13:
+
+     INTEGER N,J,IP   
+             1
+Warning: Unused variable 'n' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:42:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                          1
+Warning: Unused variable 'n0' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:46:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                              1
+Warning: Unused variable 'n1c' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:50:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                                  1
+Warning: Unused variable 'n1s' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:184:35:
+
+     REAL*8  XSB,YSB,ZSB,DUM,WKX,PHI  
+                                   1
+Warning: Unused variable 'phi' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:22:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                      1
+Warning: Unused variable 'plo' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:183:37:
+
+     REAL*8  X,Y,Z,X0,Y0,Z0,DX,DY,DZ,R,GXF(4)!,GXF0(4),GXF1(4)       
+                                     1
+Warning: Unused variable 'r' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:35:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                   1
+Warning: Unused variable 'sf' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:202:32:
+
+         real(8) :: PLO,CSST,SNST,SF,DSF,N0,N1C,N1S,JK0
+                                1
+Warning: Unused variable 'snst' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:40:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                                        1
+Warning: Unused variable 'tot' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:203:45:
+
+         real(8) :: JK1C,JK1S,F1,F2,F,TOT,TOTJ,GXF0,GXF1
+                                             1
+Warning: Unused variable 'totj' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:201:40:
+
+         real(8) :: XIT(7),ETAT(7),WIT(9)
+                                        1
+Warning: Unused variable 'wit' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:184:31:
+
+     REAL*8  XSB,YSB,ZSB,DUM,WKX,PHI  
+                               1
+Warning: Unused variable 'wkx' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:201:25:
+
+         real(8) :: XIT(7),ETAT(7),WIT(9)
+                         1
+Warning: Unused variable 'xit' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:187:47:
+
+     REAL*8  XIQSI(8),XIQET(8),XITSI(6),XITET(6),SI,ETA,DUMX
+                                               1
+Warning: Unused variable 'xitet' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:187:38:
+
+     REAL*8  XIQSI(8),XIQET(8),XITSI(6),XITET(6),SI,ETA,DUMX
+                                      1
+Warning: Unused variable 'xitsi' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:190:19:
+
+     REAL*8  XJ(2,3),XJSM(2,3),XXJ(3,3),XJp(2,3)
+                   1
+Warning: Unused variable 'xj' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:190:29:
+
+     REAL*8  XJ(2,3),XJSM(2,3),XXJ(3,3),XJp(2,3)
+                             1
+Warning: Unused variable 'xjsm' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:184:15:
+
+     REAL*8  XSB,YSB,ZSB,DUM,WKX,PHI  
+               1
+Warning: Unused variable 'xsb' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:190:38:
+
+     REAL*8  XJ(2,3),XJSM(2,3),XXJ(3,3),XJp(2,3)
+                                      1
+Warning: Unused variable 'xxj' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:184:19:
+
+     REAL*8  XSB,YSB,ZSB,DUM,WKX,PHI  
+                   1
+Warning: Unused variable 'ysb' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:184:23:
+
+     REAL*8  XSB,YSB,ZSB,DUM,WKX,PHI  
+                       1
+Warning: Unused variable 'zsb' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:111:19:
+
+         REAL*8  DUM,WKX,PHi
+                   1
+Warning: Unused variable 'dum' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:107:42:
+
+         INTEGER IS,IELEM,N,NSAMB,NCNE,J,IP
+                                          1
+Warning: Unused variable 'ip' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:111:27:
+
+         REAL*8  DUM,WKX,PHi
+                           1
+Warning: Unused variable 'phi' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:111:23:
+
+         REAL*8  DUM,WKX,PHi
+                       1
+Warning: Unused variable 'wkx' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:47:45:
+
+         REAL*8  XP,YP,ZP,XYZT(3,8),DXYZT(3,8)
+                                             1
+Warning: Unused variable 'dxyzt' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:46:17:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NSAMB,NUMQUA
+                 1
+Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:46:42:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NSAMB,NUMQUA
+                                          1
+Warning: Unused variable 'nd' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:46:45:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NSAMB,NUMQUA
+                                             1
+Warning: Unused variable 'np' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:46:51:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NSAMB,NUMQUA
+                                                   1
+Warning: Unused variable 'nsamb' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:47:34:
+
+         REAL*8  XP,YP,ZP,XYZT(3,8),DXYZT(3,8)
+                                  1
+Warning: Unused variable 'xyzt' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:16:21:
+
+         INTEGER IS,IP,N,ND,J,NP,IELEM
+                     1
+Warning: Unused variable 'ip' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:16:28:
+
+         INTEGER IS,IP,N,ND,J,NP,IELEM
+                            1
+Warning: Unused variable 'j' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:16:23:
+
+         INTEGER IS,IP,N,ND,J,NP,IELEM
+                       1
+Warning: Unused variable 'n' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:16:26:
+
+         INTEGER IS,IP,N,ND,J,NP,IELEM
+                          1
+Warning: Unused variable 'nd' declared at (1) [-Wunused-variable]
+ElemIntgl1.f90:16:31:
+
+         INTEGER IS,IP,N,ND,J,NP,IELEM
+                               1
+Warning: Unused variable 'np' declared at (1) [-Wunused-variable]
+ElemIntgl0.f90:191:0:
+
+        REAL*8  AVAL(4,8),BVAL(4,8),GXF(4)
+ ^
+Warning: 'gxf[1]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ElemIntgl0.f90:191:0: Warning: 'gxf[2]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ElemIntgl0.f90:191:0: Warning: 'gxf[3]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ElemIntgl0.f90:191:0: Warning: 'gxf[0]' may be used uninitialized in this function [-Wmaybe-uninitialized]
+tgreen.f90:364:0:
+
+      DX2 = DX*DX
+ ^
+Warning: 'dx' may be used uninitialized in this function [-Wmaybe-uninitialized]
+tgreen.f90:365:0:
+
+      DY2 = DY*DY
+ ^
+Warning: 'dy' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ElemIntgl1.f90:46:0:
+
+       INTEGER I,J,IS,IELEM,INODE,NODNUM,ND,NP,NSAMB,NUMQUA
+ ^
+Warning: 'nodnum' may be used uninitialized in this function [-Wmaybe-uninitialized]
+gfortran:f90: mesh.f90
+mesh.f90:320:4:
+
+ 1100    FORMAT(8E15.6)
+    1
+Warning: Label 1100 at (1) defined but not used
+mesh.f90:483:4:
+
+ 1000   FORMAT(1X,8I6)
+    1
+Warning: Label 1000 at (1) defined but not used
+mesh.f90:213:38:
+
+         INTEGER I,IE,M,INODE,NCNN,K,KK
+                                      1
+Warning: Unused variable 'kk' declared at (1) [-Wunused-variable]
+mesh.f90:49:18:
+
+         REAL*8  WL
+                  1
+Warning: Unused variable 'wl' declared at (1) [-Wunused-variable]
+gfortran:f90: extend_mesh.f90
+extend_mesh.f90:214:3:
+
+ 220   CONTINUE
+   1
+Warning: Label 220 at (1) defined but not used
+gfortran:f90: mod_func.f90
+mod_func.f90:3:1:
+
+  implicit none
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:4:1:
+
+  real(8) :: timerk,W1,rampf
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:5:1:
+
+  real(8),parameter :: g = 9.18
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:13:1:
+
+    REAL(8),INTENT(IN):: X,Y
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:17:1:
+
+     ETI=RAMPF*ETI
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:27:1:
+
+    REAL*8,INTENT(IN):: X,Y,Z
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:29:1:
+
+    REAL*8  WKX,DUM
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:70:1:
+
+    REAL*8,INTENT(IN):: X,Y,Z
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:72:1:
+
+    REAL*8  WKX,DUM
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:100:1:
+
+    IMPLICIT    NONE
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:102:1:
+
+    REAL*8,INTENT(IN)::   X,Y,Z
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:105:1:
+
+    REAL*8 DUM,WKX
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:110:1:
+
+   IF (H.GT.0.0d0) THEN           
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:155:1:
+
+    IMPLICIT    NONE
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:157:1:
+
+    INTEGER KIND
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:158:1:
+
+    REAL*8,INTENT(IN)::   X,Y,Z
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:162:1:
+
+   IF (KIND==0) THEN
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:163:1:
+
+     PHI=1.0d0           
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:168:1:
+
+     PHI=X       
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:173:1:
+
+     PHI=Y           
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:178:1:
+
+     PHI=Z           
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:196:7:
+
+        IMPLICIT  NONE
+       1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:198:1:
+
+    REAL*8,INTENT(IN) :: SI,ETA
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:199:1:
+
+    REAL*8,INTENT(OUT):: SF(8),DSF(2,8)
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:223:1:
+
+  RETURN
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:224:1:
+
+  END SUBROUTINE SPFUNC6
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:239:1:
+
+    REAL*8,INTENT(IN) :: SI,ETA
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:240:1:
+
+    REAL*8,INTENT(OUT):: SF(8),DSF(2,8)
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:252:38:
+
+         DSF(1,2)=-SI*(1.0D0-ETA)      
+                                      1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:269:1:
+
+  RETURN
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:270:1:
+
+  END SUBROUTINE SPFUNC8
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:282:7:
+
+        IMPLICIT  NONE
+       1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:284:1:
+
+    REAL*8,INTENT(IN) :: SI,ETA
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:285:1:
+
+    REAL*8,INTENT(OUT):: SF(8),DSF(2,8),DDSF(3,8)
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:311:30:
+
+         DDSF(1,2)= 4.0D0      
+                              1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:325:28:
+
+         DDSF(3,2)= 0.0D0    
+                            1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:331:1:
+
+    RETURN
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:332:1:
+
+   END SUBROUTINE SPFUNC6_1
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:354:38:
+
+         DSF(1,2)=-SI*(1.0D0-ETA)      
+                                      1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:373:36:
+
+         DDSF(1,2)=-(1.0D0-ETA)      
+                                    1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:391:27:
+
+         DDSF(3,2)= SI      
+                           1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+mod_func.f90:400:1:
+
+    END SUBROUTINE SPFUNC8_1
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+gfortran:f90: tripole_mod.f90
+gfortran:f90: ./hi_intgl/hi_integral.f90
+hi_const.f90:5:43: Warning: Unused PRIVATE module variable 'dlt' declared at (1) [-Wunused-value]
+./hi_intgl/hi_integral.f90:125:37:
+
+         integer :: i,j,ie,id,tmp,tmp1
+                                     1
+Warning: Unused variable 'tmp1' declared at (1) [-Wunused-variable]
+run_thru_elems.f90:31:25: Warning: Unused variable 'id' declared at (1) [-Wunused-variable]
+hi_integrand.f90:21:26: Warning: Unused variable 'x' declared at (1) [-Wunused-variable]
+test.f90:24:34: Warning: Unused variable 'comt' declared at (1) [-Wunused-variable]
+test.f90:20:24: Warning: Unused variable 'ie' declared at (1) [-Wunused-variable]
+test2.f90:14:27: Warning: Unused variable 'beta1' declared at (1) [-Wunused-variable]
+test2.f90:11:30: Warning: Unused variable 'cosn' declared at (1) [-Wunused-variable]
+test2.f90:11:56: Warning: Unused variable 'gcd' declared at (1) [-Wunused-variable]
+test2.f90:14:32: Warning: Unused variable 'nbdm' declared at (1) [-Wunused-variable]
+test2.f90:16:50: Warning: Unused variable 'nbeta' declared at (1) [-Wunused-variable]
+test2.f90:11:39: Warning: Unused variable 'ri' declared at (1) [-Wunused-variable]
+test3.f90:25:25: Warning: Unused variable 'r2' declared at (1) [-Wunused-variable]
+test3.f90:2:37: Warning: Unused dummy argument 'xiq' at (1) [-Wunused-dummy-argument]
+test6.f90:54:23: Warning: Unused variable 'drdn' declared at (1) [-Wunused-variable]
+test6.f90:54:50: Warning: Unused variable 'r2' declared at (1) [-Wunused-variable]
+test6.f90:54:29: Warning: Unused variable 'xbar2' declared at (1) [-Wunused-variable]
+test6.f90:54:35: Warning: Unused variable 'xxbar' declared at (1) [-Wunused-variable]
+test6.f90:12:28: Warning: Unused variable 'cosn' declared at (1) [-Wunused-variable]
+test6.f90:10:23: Warning: Unused variable 'drdn' declared at (1) [-Wunused-variable]
+test6.f90:12:43: Warning: Unused variable 'gcd' declared at (1) [-Wunused-variable]
+test6.f90:15:25: Warning: Unused variable 'ip' declared at (1) [-Wunused-variable]
+test6.f90:15:28: Warning: Unused variable 'jp' declared at (1) [-Wunused-variable]
+test6.f90:12:61: Warning: Unused variable 'ri' declared at (1) [-Wunused-variable]
+test6.f90:12:72: Warning: Unused variable 'shap' declared at (1) [-Wunused-variable]
+test6.f90:12:52: Warning: Unused variable 'xi' declared at (1) [-Wunused-variable]
+gfortran:f90: ./hi_intgl/hi_funcs.f90
+compiling Fortran sources
+Fortran f77 compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3 -funroll-loops
+Fortran f90 compiler: /usr/local/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
+Fortran fix compiler: /usr/local/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
+compile options: '-I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7 -I/usr/local/lib/python2.7/site-packages/numpy/core/include -I/usr/local/include -I/usr/local/opt/openssl/include -I/usr/local/opt/sqlite/include -I/usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/include/python2.7 -c'
+extra options: '-J/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/ -I/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/'
+gfortran:f90: /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elem-f2pywrappers2.f90
+/usr/local/bin/gfortran -Wall -g -Wall -g -undefined dynamic_lookup -bundle /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elemmodule.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/fortranobject.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/ElemIntgl0.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/mesh.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/extend_mesh.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/mod_func.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/tripole_mod.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/hi_intgl/hi_integral.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/hi_intgl/hi_funcs.o /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X/src.macosx-10.10-x86_64-2.7/elem-f2pywrappers2.o -L/usr/local/Cellar/gcc/5.2.0/lib/gcc/5/gcc/x86_64-apple-darwin14.4.0/5.2.0 -L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/sqlite/lib -lgfortran -o ./elem.so
+Removing build directory /var/folders/zf/p7zt21gx1xx2f2cr38fv83sh0000gn/T/tmpI7v94X
